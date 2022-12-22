@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const messageTemplateHTML = `
       <div class="message">
         <p class="messageUsername">
-          ${responseJSON.messages[index].username}
+          ${responseJSON.messages[index].username  + ":"}
         </p>
         <p class="messageContent">${responseJSON.messages[index].content}</p>
       </div>
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const messageTemplateHTML = `
       <div class="message">
         <p class="messageUsername">
-          ${username}
+          ${username + ":"}
         </p>
         <p class="messageContent">${content}</p>
       </div>
