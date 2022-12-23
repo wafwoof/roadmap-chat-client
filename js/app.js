@@ -10,14 +10,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // !hard-coded username string
   var username = "Administrator";
 
-  async function printNewestMessage() {
+  async function getNewestMessage() {
 
-    let response = await fetch('http://139.177.195.118:8801/chat/log');
-    let responseJSON = await response.json();
+    // Generate & Send Fetch GET
+    try {
+      var response = await fetch('http://139.177.195.118:8801/chat/log');
+      var responseJSON = await response.json();
+    }
+    catch (error) {
+      console.log("Kazei says: " + "\"Have you tried turning it off-and-on again?\"");
+      return error;
+    }
 
     // index[0] should be the first message in the log
     let index = 0;
 
+    // Generate & Render Client-side
     console.log("--Generating New Message!");
 
     console.log(responseJSON.messages[index]);
@@ -39,10 +47,35 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log("--Finished Generating New Message!");
   }
 
-  // THIS IS JUST FOR DEMONSTRATION
-  // (even the var name is bad)
-  function tempMessageWriter(username, content){
+  async function postMessage(username, content){
+    // settings for fetch post
+    const settings = {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        content: content
+      }),
+    };
+    console.log(settings.body)
+    // Generate & Send Fetch POST
+    try {
+      var response = await fetch('http://139.177.195.118:8801/chat/submit', settings);
+      var responseJSON = await response.json();
+      console.log(responseJSON);
+    }
+    catch (error) {
+      return error;
+    }
+      
+    // FOR THE FUTURE: between the post and the client-side rendering, we need to check if the message
+    // has been accepted properly by the server, then move on to displaying our new message.
 
+    // Generate & Render Client-side
     console.log("--Generating New Message!");
 
     const messageTemplateHTML = `
@@ -64,15 +97,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // Hookup Send Button
   function clickHandler() {
-
     var message = chatboxInput.value;
-
-    console.log(username, "says:", message);
-  
-    tempMessageWriter(username, message);
+    postMessage(username, message);
   }      
   
   
-  printNewestMessage();
+  getNewestMessage();
   
 })
