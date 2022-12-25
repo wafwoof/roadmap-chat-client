@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // !hard-coded username string
   var username = "Administrator";
 
+  // GET NEWEST MESSAGE
   async function getNewestMessage() {
 
     // Generate & Send Fetch GET
@@ -46,7 +47,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     console.log("--Finished Generating New Message!");
   }
-
+  // POST MESSAGE
   async function postMessage(username, content){
     // settings for fetch post
     const settings = {
