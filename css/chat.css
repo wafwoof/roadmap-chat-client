@@ -82,11 +82,11 @@ h3 {
 
     position: relative;
     height: auto;
-    padding-bottom: 20px;
 }
 
 .message-container .message p{
-    font-size: 25px;
+    font-size: 20px;
+    font-family: monospace;
 }
 
 .spacer {
