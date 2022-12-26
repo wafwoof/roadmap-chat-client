@@ -9,6 +9,7 @@
 <body>
     <!-- This page simply serves to make sure the user is sent to the proper place. -->
     <p>Redirecting...</p>
+    <!-- Check if localStorage "username" exists, if not: redirect to login page to create one. -->
     <script src="./js/check-credentials.js"></script>
     <!-- This is a vulnerability because the user can simply ignore the first script tag and write their
     local data. A simple way to solve this is to validate with tokens and check occasionally in the main app

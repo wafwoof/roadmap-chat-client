@@ -8,9 +8,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   chatboxSendButton.addEventListener("click", clickHandler, false);
 
   // !hard-coded username string
-  var username = "Administrator";
+  var username = localStorage.getItem("username");
+
+  // For checking newest message
+  var globalMessageNumber = 1;
 
   // GET NEWEST MESSAGE
+  //
   async function getNewestMessage() {
 
     // Generate & Send Fetch GET
@@ -23,8 +27,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
       return error;
     }
 
-    // index[0] should be the first message in the log
-    let index = 0;
+    // Bottom of the log file is newest message
+    let index = responseJSON.messages.length - 1;
+    //console.log(`--DEBUG: Message Index: ${index}`);
+    //let index = 5;
 
     // Generate & Render Client-side
     console.log("--Generating New Message!");
@@ -47,7 +53,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     console.log("--Finished Generating New Message!");
   }
+  // GET numberOfMessages
+  //
+  async function numberOfMessages(){
+    // Generate & Send Fetch GET
+    try {
+      var response = await fetch('http://139.177.195.118:8801/chat/log/numberof');
+      var responseJSON = await response.json();
+    }
+    catch (error) {
+      console.log("--ERROR: NUMBER OF MESSAGES NOT LOADING");
+      return await error;
+    }
+
+    //console.log("--DEBUG: number of messages: " + responseJSON.number)
+
+    let currentMessageNumber = responseJSON.number;
+
+    if (currentMessageNumber != globalMessageNumber) {
+      console.log(currentMessageNumber);
+      console.log(globalMessageNumber);
+      console.log("not the same, fetching new message...");
+      getNewestMessage();
+
+    }
+    
+    globalMessageNumber = currentMessageNumber;
+
+
+  }
   // POST MESSAGE
+  //
   async function postMessage(username, content){
     // settings for fetch post
     const settings = {
@@ -77,32 +113,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // has been accepted properly by the server, then move on to displaying our new message.
 
     // Generate & Render Client-side
-    console.log("--Generating New Message!");
+    //console.log("--Generating New Message!");
 
-    const messageTemplateHTML = `
-      <div class="message">
-        <p class="messageUsername">
-          ${username + ":"}
-        </p>
-        <p class="messageContent">${content}</p>
-      </div>
-    `;
+    //const messageTemplateHTML = `
+    //  <div class="message">
+    //    <p class="messageUsername">
+    //      ${username + ":"}
+    //    </p>
+    //    <p class="messageContent">${content}</p>
+    //  </div>
+    //`;
 
-    const messageContainer = document.getElementById("message-container");
-    const newMessage = document.createElement("div");
-    newMessage.innerHTML = messageTemplateHTML;
-    messageContainer.appendChild(newMessage);
+    //const messageContainer = document.getElementById("message-container");
+    //const newMessage = document.createElement("div");
+    //newMessage.innerHTML = messageTemplateHTML;
+    //messageContainer.appendChild(newMessage);
 
-    console.log("--Finished Generating New Message!");
+    //console.log("--Finished Generating New Message!");
   }
-
   // Hookup Send Button
+  //
   function clickHandler() {
     var message = chatboxInput.value;
     postMessage(username, message);
   }      
   
-  
-  getNewestMessage();
+
+  // GET NEWEST MESSAGE
+  // check periodically if new message is available and if returns TRUE then run getNewestMessage()
+  setInterval(function() {
+      // test
+      numberOfMessages();
+  }, 1000);
   
 })

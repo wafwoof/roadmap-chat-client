@@ -5,12 +5,17 @@
 
 .container {
     
-    width: 600px; 
-    height: 400px; 
+    min-width: 50%;
+    max-width: 800px;
+    width: 400px;
+    min-height: 15%;
+    max-height: 1200px;
+    height: 490px;  
+
  
     position: absolute; 
     top:0; 
-    bottom: 250px; 
+    bottom: 115px; 
     left: 0; 
     right: 0; 
  
@@ -30,20 +35,20 @@ h1 {
 
 h2 {
     text-align: center;
-    margin: 12px;
-    font-size: 45px;
+    margin: 32px;
+    font-size: 64px;
 
     font-family: sans-serif;
-    line-height: 40px;
+    line-height: 60px;
 }
 
 h3 {
     text-align: center;
     margin: 0px;
-    font-size: 20px;
+    font-size: 30px;
 
     font-family: sans-serif;
-    line-height: 25px;
+    line-height: 40px;
 }
 
 .login-input {

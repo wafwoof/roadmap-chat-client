@@ -3,7 +3,8 @@ function login() {
 
     var username = document.getElementById("login-username").value;
     
-    
+    // Write Name to Local Storage
+    localStorage.setItem("username", username);
 
     console.log("logging in as:", username, "and redirecting...");
 
