@@ -23,4 +23,4 @@ Please contact me at kaz@rdmap.dev if you come across any issues while using the
 
 (/chat currently does not return anything useful)
 
-##### And now I must go to bed because I have been working on this for 10 hours straight our something.
+##### And now I must go to bed because I have been working on this for 10 hours straight or something.
