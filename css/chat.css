@@ -64,16 +64,39 @@ h3 {
     border-width: 5px;
 }
 
-.chat-button {
+/*.chat-button {
     display: inline;
     margin: 0;
 
     width: 10%;
     height: 40px;
-    font-size: 25px;
+    font-size: 20px;
 
-    
     border-width: 5px;
+
+    padding-left: 0;
+    padding-right: 0;
+
+}
+*/
+
+.chat-button {
+    display: inline;
+    margin: 0;
+
+    width: 15%;
+    height: 40px;
+    font-size: 20px;
+
+    border-width: 5px;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    /* make the text horizontally centered on mobile */
+    text-align: center;
+    /* make the text vertically centered on mobile */
+    line-height: 40px;
 
 }
 
