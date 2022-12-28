@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM fully loaded and parsed.');
+  console.log('--BROWSER: DOM fully loaded and parsed.');
     
   // All Main Code After This Comment
 
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     //let index = 5;
 
     // Generate & Render Client-side
-    console.log("--Generating New Message!");
+    console.log("    --DEBUG: Message received, displaying message...");
 
     console.log(responseJSON.messages[index]);
 
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     newMessage.innerHTML = messageTemplateHTML;
     messageContainer.appendChild(newMessage);
 
-    console.log("--Finished Generating New Message!");
+    console.log("    --DEBUG: Finished displaying message!");
   }
   // GET numberOfMessages
   //
@@ -66,20 +66,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
       return await error;
     }
 
-    //console.log("--DEBUG: number of messages: " + responseJSON.number)
-
     let currentMessageNumber = responseJSON.number;
 
     if (currentMessageNumber != globalMessageNumber) {
-      console.log(currentMessageNumber);
-      console.log(globalMessageNumber);
-      console.log("not the same, fetching new message...");
+      console.log("--SERVER: " + currentMessageNumber + " messages.");
+      console.log("--CLIENT: " + globalMessageNumber + " messages.");
+      console.log("    --DEBUG: Fetching newest message...");
       getNewestMessage();
 
     }
     
     globalMessageNumber = currentMessageNumber;
-
 
   }
   // POST MESSAGE
@@ -109,27 +106,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       return error;
     }
       
-    // FOR THE FUTURE: between the post and the client-side rendering, we need to check if the message
-    // has been accepted properly by the server, then move on to displaying our new message.
-
-    // Generate & Render Client-side
-    //console.log("--Generating New Message!");
-
-    //const messageTemplateHTML = `
-    //  <div class="message">
-    //    <p class="messageUsername">
-    //      ${username + ":"}
-    //    </p>
-    //    <p class="messageContent">${content}</p>
-    //  </div>
-    //`;
-
-    //const messageContainer = document.getElementById("message-container");
-    //const newMessage = document.createElement("div");
-    //newMessage.innerHTML = messageTemplateHTML;
-    //messageContainer.appendChild(newMessage);
-
-    //console.log("--Finished Generating New Message!");
   }
   // Hookup Send Button
   //
