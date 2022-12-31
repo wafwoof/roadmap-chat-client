@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   var chatboxSendButton = document.getElementById("chat-box-send-button");
   chatboxSendButton.addEventListener("click", clickHandler, false);
 
-  // !hard-coded username string
+  // set username variable
   var username = localStorage.getItem("username");
 
   // For checking newest message
@@ -30,7 +30,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Bottom of the log file is newest message
     let index = responseJSON.messages.length - 1;
     //console.log(`--DEBUG: Message Index: ${index}`);
-    //let index = 5;
 
     // Generate & Render Client-side
     console.log("    --DEBUG: Message received, displaying message...");
@@ -98,7 +97,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         content: content
       }),
     };
-    console.log(settings.body)
+
     // Generate & Send Fetch POST
     try {
       var response = await fetch('http://139.177.195.118:8801/chat/submit', settings);
@@ -110,10 +109,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
       
   }
+  postMessage(username, "<b><i>has logged onto the server!</i></b>"); // Maybe this should be done server side?
+
   // Hookup Send Button
   //
   function clickHandler() {
-    var message = chatboxInput.value;
+    var message = chatboxInput.value; // defined near the top of this file
+    chatboxInput.value = ""; // credit: rajan s.
     postMessage(username, message);
   }      
 
