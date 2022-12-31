@@ -43,60 +43,34 @@ h3 {
     position: fixed; 
     bottom:0px;
     width:100%; 
-    background-color: #393838; 
-    opacity: 1;
-
     background-color: #393838;
-
+    white-space: nowrap;
+    opacity: 1;
     
 }
 
 .chat-input {
     display: inline;
-    margin: 0;
-
-    min-width: 50px;
-    max-width: 2080px;
-    width: 80%;
-    height: 40px;
-    font-size: 25px;
-
-    border-width: 5px;
+    margin: 0px;
+    padding: 0px;
+    width: 90%;
+    height: 100%;
+    text-size-adjust: 500px;
+    
 }
 
-/*.chat-button {
-    display: inline;
-    margin: 0;
-
-    width: 10%;
-    height: 40px;
-    font-size: 20px;
-
-    border-width: 5px;
-
-    padding-left: 0;
-    padding-right: 0;
-
+textarea:focus, input:focus{
+    outline: none;
 }
-*/
 
 .chat-button {
     display: inline;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
+    width: 10%;
+    height: 100%;
 
-    width: 15%;
-    height: 40px;
-    font-size: 20px;
-
-    border-width: 5px;
-
-    padding-left: 0;
-    padding-right: 0;
-
-    /* make the text horizontally centered on mobile */
-    text-align: center;
-    /* make the text vertically centered on mobile */
-    line-height: 40px;
+    text-size-adjust: auto;
 
 }
 
