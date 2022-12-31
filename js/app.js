@@ -116,6 +116,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var message = chatboxInput.value;
     postMessage(username, message);
   }      
+
+  // Create Event Listener on text box to trigger on pressing the [Enter] key
+  window.addEventListener("keydown", (event) => {
+    if (event.code === 'Enter') {
+      clickHandler();
+    }
+  }, true);
   
 
   // GET NEWEST MESSAGE
