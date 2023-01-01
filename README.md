@@ -1,5 +1,5 @@
 
-# Roadmap Chat Client 0.1.0b (beta)
+# Roadmap Chat Client 0.1.1b (beta)
 ### DISCLAIMER
 THIS PROJECT COMES WITH ABSOLUTELY NO WARRANTY.
 THERE ARE BUGS, THIS SOFTWARE IS STILL VERY EXPERIMENTAL.
@@ -10,6 +10,17 @@ We have just entered beta!
 
 ###### UPDATE: Wednesday, December 28th.
 My next few updates will be small, quality of life improvements. I want to work on a larger collection of features and push them as a 0.1.1b. My main focus is on improving the architecture of our server and increasing security. As is, the server is pretty stable but only because I've made it as simple as I possibly could without going too insane
+
+
+## Version 0.1.1b
+
+Many small improvements to UI have been made. Here are some of the noteable ones:
+- Login Announcements.
+- Pressing Enter sends the message.
+- Improved UI scalability.
+- Fixed IPhone UI.
+- Cleaned up login.html
+
 
 
 

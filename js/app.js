@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Generate & Send Fetch GET
     try {
-      var response = await fetch('http://139.177.195.118:8801/chat/log');
+      var response = await fetch('http://172.105.99.52:8801/chat/log');
       var responseJSON = await response.json();
     }
     catch (error) {
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   async function numberOfMessages(){
     // Generate & Send Fetch GET
     try {
-      var response = await fetch('http://139.177.195.118:8801/chat/log/numberof');
+      var response = await fetch('http://172.105.99.52:8801/chat/log/numberof');
       var responseJSON = await response.json();
     }
     catch (error) {
@@ -71,8 +71,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let currentMessageNumber = responseJSON.number;
 
     if (currentMessageNumber != globalMessageNumber) {
-      console.log("--SERVER: " + currentMessageNumber + " messages.");
-      console.log("--CLIENT: " + globalMessageNumber + " messages.");
+      console.log("--SERVER: has " + currentMessageNumber + " messages.");
+      console.log("--CLIENT: has " + globalMessageNumber + " messages.");
       console.log("    --DEBUG: Fetching newest message...");
       getNewestMessage();
 
@@ -100,7 +100,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Generate & Send Fetch POST
     try {
-      var response = await fetch('http://139.177.195.118:8801/chat/submit', settings);
+      console.log("--CLIENT: Begin sending message...");
+      var response = await fetch('http://172.105.99.52:8801/chat/submit', settings);
       var responseJSON = await response.json();
       console.log(responseJSON);
     }
@@ -129,8 +130,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // GET NEWEST MESSAGE
   // check periodically if new message is available and if returns TRUE then run getNewestMessage()
-  setInterval(function() {
-      numberOfMessages();
-  }, 1000);
+  // This is a really really bad bad way of doing this.
+  // I will rewrite this soon I promise.
+  setInterval(function() { numberOfMessages(); }, 1000);
   
 })

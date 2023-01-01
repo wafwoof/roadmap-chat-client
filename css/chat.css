@@ -53,7 +53,7 @@ h3 {
     display: inline;
     margin: 0px;
     padding: 0px;
-    width: 90%;
+    width: 80%;
     height: 100%;
     text-size-adjust: 500px;
     
@@ -67,11 +67,9 @@ textarea:focus, input:focus{
     display: inline;
     margin: 0px;
     padding: 0px;
-    width: 10%;
-    height: 100%;
-
+    width: 20%;
     text-size-adjust: auto;
-
+    height: 100%;
 }
 
 .message-container .message {
