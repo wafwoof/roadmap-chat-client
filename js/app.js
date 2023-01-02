@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // For checking newest message
   var globalMessageNumber = 1;
 
-  //GET ALL MESSAGE
+  //GET ALL MESSAGES
   //
   async function getAllMessages() {
 
@@ -147,7 +147,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       console.log("--CLIENT: Begin sending message...");
       var response = await fetch('https://rdmap.dev/chat/submit', settings);
       var responseJSON = await response.json();
-      console.log(responseJSON);
+      console.log(responseJSON); // server response code
     }
     catch (error) {
       return error;

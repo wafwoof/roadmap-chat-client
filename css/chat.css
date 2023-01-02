@@ -84,7 +84,7 @@ nav a {
     padding: 0px;
     width: 80%;
     height: 100%;
-    text-size-adjust: 500px;
+    font-size: 20px;
 }
 
 textarea:focus, input:focus{
@@ -95,9 +95,12 @@ textarea:focus, input:focus{
     display: inline;
     margin: 0px;
     padding: 0px;
+    border-width: 5px;
+    border-color: whitesmoke;
     width: 20%;
-    text-size-adjust: auto;
     height: 100%;
+    font-size : 20px;
+    text-align: center;
 }
 
 .message-container .message {

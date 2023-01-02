@@ -8,6 +8,8 @@ Thank you for checking out this project! My goal is to experiment with a client/
 
 Looking forward, the entire structure and model of chat will have to be revised. The structure and feature-set will be experimented with until the app is fairly convincing.
 
+Please contact me at [kaz@rdmap.dev] if you come across any issues while using the software.
+
 ## Version 0.1.1b
 
 Some big improvements:
