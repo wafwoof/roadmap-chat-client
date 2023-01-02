@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   var chatboxInput = document.getElementById("chat-box-input");
   var chatboxSendButton = document.getElementById("chat-box-send-button");
+  const scrollSpacer = document.getElementById("scroll-spacer");
   chatboxSendButton.addEventListener("click", clickHandler, false);
 
   // set username variable
@@ -12,6 +13,46 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // For checking newest message
   var globalMessageNumber = 1;
+
+  //GET ALL MESSAGE
+  //
+  async function getAllMessages() {
+
+    // Generate & Send Fetch GET
+    try {
+      var response = await fetch('https://rdmap.dev/chat/log');
+      var responseJSON = await response.json();
+    }
+    catch (error) {
+      console.log("--SERVER: Can not get messages.");
+      return error;
+    }
+
+    // Loop Through Last i Messages
+    for (let i = 15; i >= 1; i--) {
+      // Bottom of the log file is newest message
+      let index = (responseJSON.messages.length - i);
+      // Generate & Render Client-side
+
+      const messageTemplateHTML = `
+        <div class="message">
+          <p class="messageUsername">
+            ${responseJSON.messages[index].username  + ":"}
+          </p>
+          <p class="messageContent">${responseJSON.messages[index].content}</p>
+        </div>
+      `;
+
+      const messageContainer = document.getElementById("message-container");
+      const newMessage = document.createElement("div");
+      newMessage.innerHTML = messageTemplateHTML;
+      messageContainer.appendChild(newMessage);
+
+      // Scroll down to reveal the new message
+      newMessage.scrollIntoView();
+    }
+    scrollSpacer.scrollIntoView(); // doesn't work every time
+  }
 
   // GET NEWEST MESSAGE
   //
@@ -23,7 +64,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       var responseJSON = await response.json();
     }
     catch (error) {
-      console.log("Kazei says: " + "\"Have you tried turning it off-and-on again?\"");
+      console.log("--SERVER: Can not get messages.");
       return error;
     }
 
@@ -33,7 +74,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Generate & Render Client-side
     console.log("    --DEBUG: Message received, displaying message...");
-
     console.log(responseJSON.messages[index]);
 
     const messageTemplateHTML = `
@@ -68,18 +108,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
       return await error;
     }
 
-    let currentMessageNumber = responseJSON.number;
-
-    if (currentMessageNumber != globalMessageNumber) {
-      console.log("--SERVER: has " + currentMessageNumber + " messages.");
+    let serverMessageNumber = responseJSON.number;
+    
+    if (serverMessageNumber != globalMessageNumber) {
+      console.log("--SERVER: has " + serverMessageNumber + " messages.");
       console.log("--CLIENT: has " + globalMessageNumber + " messages.");
       console.log("    --DEBUG: Fetching newest message...");
-      getNewestMessage();
-
+      if (globalMessageNumber == 1) {
+        console.log("    --CLIENT: First time, fetching all messages...");
+        getAllMessages();
+      }
+      else {
+        getNewestMessage();
+      }
     }
-    
-    globalMessageNumber = currentMessageNumber;
-
+    // update globalMessageNumber
+    globalMessageNumber = serverMessageNumber;
   }
   // POST MESSAGE
   //
@@ -110,7 +154,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
       
   }
-  postMessage(username, "<b><i>has logged onto the server!</i></b>"); // Maybe this should be done server side?
+  //postMessage(null, "<b></b>"); // Maybe this should be done server side?
 
   // Hookup Send Button
   //

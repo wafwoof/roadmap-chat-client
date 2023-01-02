@@ -6,22 +6,25 @@ THERE ARE BUGS, THIS SOFTWARE IS STILL VERY EXPERIMENTAL.
 ## Info
 Thank you for checking out this project! My goal is to experiment with a client/server Restful API Model in the form of a chat application.
 
-We have just entered beta!
-
-###### UPDATE: Wednesday, December 28th.
-My next few updates will be small, quality of life improvements. I want to work on a larger collection of features and push them as a 0.1.1b. My main focus is on improving the architecture of our server and increasing security. As is, the server is pretty stable but only because I've made it as simple as I possibly could without going too insane
-
+Looking forward, the entire structure and model of chat will have to be revised. The structure and feature-set will be experimented with until the app is fairly convincing.
 
 ## Version 0.1.1b
+
+Some big improvements:
+- Loads more than a single message upon initial start.
+- A new settings page!
 
 Many small improvements to UI have been made. Here are some of the noteable ones:
 - Login Announcements.
 - Pressing Enter sends the message.
 - Improved UI scalability.
-- Fixed IPhone UI.
+- Fixed iPhone UI.
 - Cleaned up login.html
 
-
+Known bugs:
+- "Sometimes images will mess up scrolling into view on first boot."
+- "UI is a bit dodgy"
+    - I am working on this. I want to start using bootstrap soon.
 
 
 ## Version 0.1.0b
