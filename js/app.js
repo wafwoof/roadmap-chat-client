@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Generate & Send Fetch GET
     try {
-      var response = await fetch('http://172.105.99.52:8801/chat/log');
+      var response = await fetch('https://rdmap.dev/chat/log');
       var responseJSON = await response.json();
     }
     catch (error) {
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   async function numberOfMessages(){
     // Generate & Send Fetch GET
     try {
-      var response = await fetch('http://172.105.99.52:8801/chat/log/numberof');
+      var response = await fetch('https://rdmap.dev/chat/log/numberof');
       var responseJSON = await response.json();
     }
     catch (error) {
@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Generate & Send Fetch POST
     try {
       console.log("--CLIENT: Begin sending message...");
-      var response = await fetch('http://172.105.99.52:8801/chat/submit', settings);
+      var response = await fetch('https://rdmap.dev/chat/submit', settings);
       var responseJSON = await response.json();
       console.log(responseJSON);
     }
