@@ -85,6 +85,11 @@ textarea:focus, input:focus{
     font-family: monospace;
 }
 
+img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
 .spacer {
     height: 5%;
 }
