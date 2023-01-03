@@ -31,15 +31,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Loop Through Last i Messages
     for (let i = 15; i >= 1; i--) {
       // Bottom of the log file is newest message
-      let index = (responseJSON.messages.length - i);
+      let index = (responseJSON.length - i);
       // Generate & Render Client-side
 
       const messageTemplateHTML = `
         <div class="message">
           <p class="messageUsername">
-            ${responseJSON.messages[index].username  + ":"}
+            ${responseJSON[index].username  + ":"}
           </p>
-          <p class="messageContent">${responseJSON.messages[index].content}</p>
+          <p class="messageContent">${responseJSON[index].content}</p>
         </div>
       `;
 
@@ -69,19 +69,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Bottom of the log file is newest message
-    let index = responseJSON.messages.length - 1;
+    let index = responseJSON.length - 1;
     //console.log(`--DEBUG: Message Index: ${index}`);
 
     // Generate & Render Client-side
     console.log("    --DEBUG: Message received, displaying message...");
-    console.log(responseJSON.messages[index]);
+    console.log(responseJSON[index]);
 
     const messageTemplateHTML = `
       <div class="message">
         <p class="messageUsername">
-          ${responseJSON.messages[index].username  + ":"}
+          ${responseJSON[index].username  + ":"}
         </p>
-        <p class="messageContent">${responseJSON.messages[index].content}</p>
+        <p class="messageContent">${responseJSON[index].content}</p>
       </div>
     `;
 
@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
       
   }
-  //postMessage(null, "<b></b>"); // Maybe this should be done server side?
+  //postMessage(username, "<b>logged on</b>"); // Maybe this should be done server side?
 
   // Hookup Send Button
   //
