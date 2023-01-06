@@ -8,11 +8,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const scrollSpacer = document.getElementById("scroll-spacer");
   chatboxSendButton.addEventListener("click", clickHandler, false);
 
+  // Menu button (later this will be a slideout menu like a burger style)
+  var menuButton = document.getElementById("menu-button");
+  menuButton.addEventListener("click", function() {
+    window.location.pathname = "./settings.html";
+  });
+
   // set username variable
   var username = localStorage.getItem("username");
 
   // For checking newest message
   var globalMessageNumber = 1;
+
+  // Check for existence of serviceWorker
+  var disableWorker = false;
+
+  if ('serviceWorker' in navigator && disableWorker === true) {
+    navigator.serviceWorker.register("./service-worker.js").then(registration => {
+      console.log("--PWA: serviceWorker Registered");
+      console.log(registration);
+    }).catch(error => {
+      console.log("--PWA: serviceWorker Registration Failed");
+      console.log(error);
+    });
+  }
 
   //GET ALL MESSAGES
   //

@@ -1,0 +1,17 @@
+{
+    "short_name": "Chat",
+    "name": "Roadmap Chat Client.",
+    "icons": [
+      {
+        "src": "./images/icon.svg",
+        "type": "image/svg+xml",
+        "sizes": "512x512"
+      }
+    ],
+    "id": ".",
+    "start_url": ".",
+    "theme_color": "#0d0d0d",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "."
+  }
