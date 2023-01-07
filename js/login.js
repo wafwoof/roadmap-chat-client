@@ -7,7 +7,7 @@ function login() {
         return;
     }
     else if (username.length > 20) {
-        alert("Username must be less than 20 characters.");
+        alert("Username must be no larger than 20 characters.");
         return;
     }
     else {
