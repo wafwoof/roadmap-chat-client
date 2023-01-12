@@ -9,10 +9,12 @@ body {
 }
 
 h1 {
-    text-align: center;
-    margin: 12px;
+    position: absolute;
+    display: inline;
     font-size: 30px;
 
+    margin-top: 0.5vh;
+    margin-left: 10px;
     font-family: sans-serif;
 }
 
@@ -69,6 +71,37 @@ h3 {
     border: 0;
 }
 
+nav {
+    visibility: hidden;  
+    height: 0; 
+}
+
+nav.navbar {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 50px;
+
+    z-index: 1;
+}
+
+nav a {
+    background: #8b8b8b;
+    padding-left: 5px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    font-size: 25px;
+    color: #010101;
+    
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+
+
 .container .chat-box-container {    
     height: 50px; 
     position: fixed; 
@@ -82,10 +115,10 @@ h3 {
     display: inline;
     margin: 0px;
     padding: 0px;
-    width: 80%;
+    width: 75%;
     border-width: 0px;
     height: 100%;
-    font-size: 20px;
+    font-size: x-large;
 
     border-color: #d7d7d7;
     background-color: #8b8b8b;
@@ -98,12 +131,17 @@ textarea:focus, input:focus{
 .chat-button {
     display: inline;
     margin: 0px;
+    margin-right: 5%;
     border-width: 0px;
-    border-color: #d7d7d7;
+
+    color: #111111;
+    border-color: #111111;
     background-color: #8b8b8b;
+
     width: 20%;
     height: 100%;
-    font-size : 20px;
+    font-size: xx-large;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -119,7 +157,7 @@ textarea:focus, input:focus{
 .message-container .message p{
     font-size: 20px;
     font-family: monospace;
-    color: #010101;
+    color: black;
     max-width: 100%;
     word-break: break-all;
 }
@@ -128,6 +166,11 @@ textarea:focus, input:focus{
 img {
     max-width: 250px;
     max-height: 250px;
+}
+
+iframe {
+    width: 250px;
+    height: 400px;
 }
 
 .spacer {

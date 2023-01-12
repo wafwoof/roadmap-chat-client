@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="rdmap-icon-button.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="215.22888"
+     inkscape:cy="214.63432"
+     inkscape:window-width="1280"
+     inkscape:window-height="705"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#4d4d4d;stroke-width:0.265054"
+       id="rect111"
+       width="135.48148"
+       height="135"
+       x="1.5992278e-07"
+       y="0.31461871"
+       ry="26.56571" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.87778px;line-height:0.9;white-space:pre;inline-size:209.609;display:inline;fill:#4d4d4d;stroke-width:0.264583"
+       x="85.447754"
+       y="35.150101"
+       id="text322"
+       transform="matrix(1.1321202,0.00210802,-0.00160176,1.4899433,-148.81204,24.535682)"><tspan
+         x="85.447754"
+         y="35.150101"
+         id="tspan686"><tspan
+           style="font-weight:bold;font-size:25.4px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle;fill:#b3b3b3"
+           id="tspan684">
+</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:19.7556px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle;fill:#b3b3b3;stroke-width:0.264583"
+       x="67.643005"
+       y="107.59957"
+       id="text384"><tspan
+         sodipodi:role="line"
+         id="tspan382"
+         style="font-size:19.7556px;stroke-width:0.264583"
+         x="67.643005"
+         y="107.59957">rdmap.dev</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:72.3996px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle;fill:#b3b3b3;stroke-width:0.377081"
+       x="75.668655"
+       y="69.303032"
+       id="text221"
+       transform="scale(0.82304717,1.2149972)"><tspan
+         sodipodi:role="line"
+         id="tspan219"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:72.3996px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold Oblique';stroke-width:0.377081"
+         x="75.668655"
+         y="69.303032">Chat</tspan></text>
+    <rect
+       style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.476263"
+       id="rect567"
+       width="40.585804"
+       height="30.20339"
+       x="-8.8093224"
+       y="-12.584745"
+       ry="15.101695" />
+    <rect
+       style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.476263"
+       id="rect567-0"
+       width="40.585804"
+       height="30.20339"
+       x="-29.731462"
+       y="-0.94385666"
+       ry="15.101695" />
+    <rect
+       style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.476263"
+       id="rect567-2"
+       width="40.585804"
+       height="30.20339"
+       x="-11.483581"
+       y="111.375"
+       ry="15.101695" />
+  </g>
+</svg>

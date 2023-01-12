@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="./images/icon.svg">
+    <link rel="apple-touch-icon" href="./images/icon.svg">
     <title>Settings</title>
     <link rel="stylesheet" type="text/css" href="./css/chat.css">
     <link rel="stylesheet" type="text/css" href="./css/settings.css">
 
     <script src="./js/check-credentials.js"></script>
+    <script src="./js/vanity.js"></script> <!-- This will be for setting theme settings in chat.html -->
+    <script src="./js/settings.js"></script> <!-- This will be for setting theme settings in settings.html -->
 </head>
 <body>
     <div class="container">        
         <div class="chat-box-header">
-            <h1>Client Settings</h1>
+            <button class="menu-button" id="menu-button"><img src="./images/icon-button.svg" alt="chat-icon"></button>
+            <h1>settings</h1>
         </div>
+        <nav>
+            <a href="./chat.html">return to chat</a>
+            <a onclick="alert('This feature is not finished yet. Check back later.')">switch rooms</a>
+            <a href="./login.html">log out</a>
+
+        </nav>
 
         <div class="spacer"></div>
         
         <div class="settings">
-            <a href="./chat.html">Return to chat</a>
-            <a href="./login.html">Logout of chat</a>
+            <input type="color" id="setting-text-color" name="setting-text-color">
+            <label for="setting-text-color">text color</label>
+            <br>
+            <br>
+            <input type="button" class="submit" id="save-button" value="Save">
+            <!-- <input type="button" class="submit" id="reset-button" value="Reset"> -->
         </div>
+
     </div>
+
 </body>
 </html>

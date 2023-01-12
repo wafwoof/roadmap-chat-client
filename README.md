@@ -1,5 +1,5 @@
 
-# Roadmap Chat Client 0.1.1b (beta)
+# Roadmap Chat Client 0.1.2b (beta)
 ### DISCLAIMER
 THIS PROJECT COMES WITH ABSOLUTELY NO WARRANTY.
 THERE ARE BUGS, THIS SOFTWARE IS STILL VERY EXPERIMENTAL.
@@ -10,6 +10,21 @@ Looking forward, the entire structure and model of chat will have to be revised.
 
 Please contact me at [kaz@rdmap.dev] if you come across any issues while using the software.
 
+## Version 0.1.2b
+
+The last version left a lot to be desired for me, in my free time I have been expanding the UI of chat.
+
+This version also adds unofficial PWA support! It is currently disabled for development but passes Chrome's PWA lighthouse test for installation. To re-enable PWA support: check rename manifest.json reference (check console)
+
+Design Update:
+- Menu Button in top left to access the drop-down menu.
+- Functional settings page (just allows changing text color currently).
+- Various UI fixes.
+- Stricter character limit enforced by the server.
+- Switch Rooms menu button added (planned feature).
+
+I am working on MySQL support, the server will be given more attention than the client for some time.
+
 ## Version 0.1.1b
 
 Some big improvements:
@@ -17,7 +32,6 @@ Some big improvements:
 - A new settings page!
 
 Many small improvements to UI have been made. Here are some of the noteable ones:
-- Login Announcements.
 - Pressing Enter sends the message.
 - Improved UI scalability.
 - Fixed iPhone UI.
@@ -53,6 +67,4 @@ Please contact me at [kaz@rdmap.dev] if you come across any issues while using t
 
 ## API Resources:
 /chat, /chat/log, /chat/log/numberof, /chat/submit
-
-(/chat will be slightly outdated until I push the full 0.1.1b update)
 

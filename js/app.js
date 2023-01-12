@@ -10,15 +10,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // Menu button (later this will be a slideout menu like a burger style)
   var menuButton = document.getElementById("menu-button");
+  var nav = document.querySelector("nav");
   menuButton.addEventListener("click", function() {
-    window.location.pathname = "./settings.html";
+    nav.classList.toggle("navbar");
   });
 
   // set username variable
   var username = localStorage.getItem("username");
-
   // For checking newest message
   var globalMessageNumber = 1;
+  // Check Users Preferences on Loading Images
+  var displayImages = localStorage.getItem("displayImageSetting");
 
   // Check for existence of serviceWorker
   var disableWorker = false;
@@ -53,12 +55,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
       let index = (responseJSON.length - i);
       // Generate & Render Client-side
 
+      var messageColor = localStorage.getItem("textColorSetting");
+      console.log("custom message color:", messageColor);
       const messageTemplateHTML = `
         <div class="message">
-          <p class="messageUsername">
+          <p class="messageUsername" style="color:${messageColor}">
             ${responseJSON[index].username  + ":"}
           </p>
-          <p class="messageContent">${responseJSON[index].content}</p>
+          <p class="messageContent" style="color:${messageColor}">${responseJSON[index].content}</p>
         </div>
       `;
 
@@ -95,12 +99,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log("    --DEBUG: Message received, displaying message...");
     console.log(responseJSON[index]);
 
+    var messageColor = localStorage.getItem("textColorSetting");
+    console.log("custom message color:", messageColor);
     const messageTemplateHTML = `
       <div class="message">
-        <p class="messageUsername">
+        <p class="messageUsername" style="color:${messageColor}">
           ${responseJSON[index].username  + ":"}
         </p>
-        <p class="messageContent">${responseJSON[index].content}</p>
+        <p class="messageContent" style="color:${messageColor}">${responseJSON[index].content}</p>
       </div>
     `;
 

@@ -1,10 +1,30 @@
-.settings a{
-    display: block;
-    margin: 45px;
-    font-size: 40px;
-    text-decoration: none;
+.settings input{
+    position: relative;
 
-    text-align: center;
+    margin-top: 90px;
+    margin-left: 20vw;
 
+    width: 40px;
+    height: 40px;
 }
 
+.settings label{ /*make one at the top to reflect what text will really look like*/
+    position: relative;
+    
+    font-size: 25px;
+    font-family: monospace; 
+}
+
+.settings .submit {
+    position: relative;
+
+    margin-top: 50px;
+    margin-left: 20vw;
+
+    width: 90px;
+    height: 45px;
+
+    color: black;
+
+    font-size: x-large;
+}
