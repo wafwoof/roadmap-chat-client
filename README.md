@@ -18,6 +18,7 @@ This version also adds unofficial PWA support! It is currently disabled for deve
 
 Design Update:
 - Menu Button in top left to access the drop-down menu.
+- Proper Image URL Integration.
 - Functional settings page (just allows changing text color currently).
 - Various UI fixes.
 - Stricter character limit enforced by the server.

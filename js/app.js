@@ -179,7 +179,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
       
   }
-  //postMessage(username, "<b>logged on</b>"); // Maybe this should be done server side?
+  
+  // POST IMAGE URL - MENU BUTTON
+  //
+  function postImageURL() {
+    let url = prompt("Paste your image URL here:");
+    let regexCheckURL = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+    // Test for invalid image URL
+    if (url != null && regexCheckURL.test(url) === true) {
+      // Attach proper HTML syntax for img
+      url = ("<img src=\"" + url + "\">");
+      postMessage(username, url);
+      console.log(url);
+      console.log("VALID IMAGE URL SUBMITTED!");
+    }
+    else {
+      alert("Invalid Image URL.")
+    }
+  }
+
+  var postImageURLButton = document.getElementById("postImageURLButton");
+  postImageURLButton.addEventListener("click", postImageURL, false);
+
 
   // Hookup Send Button
   //
@@ -189,7 +210,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     postMessage(username, message);
   }      
 
-  // Create Event Listener on text box to trigger on pressing the [Enter] key
+  // [Enter] Key Listner
   window.addEventListener("keydown", (event) => {
     if (event.code === 'Enter') {
       clickHandler();
